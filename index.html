@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reem Haitham | Professional React Web Developer</title>
+  <meta name="description" content="Reem Haitham Ahmed Helmy – Professional React Web Developer building modern, responsive, high-performance web applications.">
+  <meta name="theme-color" content="#000000">
+
+  <!-- Fonts, Bootstrap 5 and Bootstrap Icons (CDN) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <main class="page">
+    <article class="profile-card" aria-labelledby="profile-name">
+
+      <!-- Cover banner -->
+      <header class="cover">
+        <img class="cover__img" src="assets/cover-banner.png" alt="Reem Haitham – Front-End React Developer cover banner" width="1584" height="396" fetchpriority="high">
+      </header>
+
+      <!-- Photo + QR button row -->
+      <div class="profile-top">
+        <div class="avatar">
+          <img src="assets/profile-photo.jpg" alt="Portrait of Reem Haitham" width="432" height="432">
+        </div>
+        <button type="button" class="btn-qr" id="qrBtn" data-bs-toggle="modal" data-bs-target="#qrModal">
+          <i class="bi bi-qr-code-scan" aria-hidden="true"></i><span>QR Code</span>
+        </button>
+      </div>
+
+      <!-- Profile information -->
+      <section class="profile-body">
+        <h1 class="profile-name" id="profile-name">Reem Haitham Ahmed Helmy</h1>
+        <p class="profile-title">Professional React Web Developer</p>
+        <p class="profile-desc">Building modern, responsive, and high-performance web applications using React, JavaScript, TypeScript, and modern web technologies.</p>
+
+        <button type="button" class="btn-cv" id="viewCvBtn" data-bs-toggle="modal" data-bs-target="#cvModal">
+          <i class="bi bi-eye" aria-hidden="true"></i><span>View CV</span>
+        </button>
+
+        <h2 class="section-label">Links &amp; Profiles</h2>
+        <!-- Buttons are generated from profileLinks in js/script.js -->
+        <nav class="links" id="linksList" aria-label="Links and profiles"></nav>
+      </section>
+    </article>
+  </main>
+
+  <!-- CV viewer modal (scroll, zoom, download) -->
+  <div class="modal fade cv-modal" id="cvModal" tabindex="-1" aria-labelledby="cvModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable modal-fullscreen-md-down">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="cvModalTitle"><i class="bi bi-file-earmark-person" aria-hidden="true"></i> Curriculum Vitae</h2>
+          <div class="cv-tools" role="group" aria-label="CV viewer toolbar">
+            <button type="button" class="tool-btn" id="zoomOut" aria-label="Zoom out" title="Zoom out"><i class="bi bi-zoom-out" aria-hidden="true"></i></button>
+            <span class="zoom-level" id="zoomLevel" aria-live="polite">100%</span>
+            <button type="button" class="tool-btn" id="zoomIn" aria-label="Zoom in" title="Zoom in"><i class="bi bi-zoom-in" aria-hidden="true"></i></button>
+            <!-- Download the original PDF (href/filename are set from CV_PATH in script.js) -->
+            <a class="tool-btn tool-btn--download" id="downloadCv" href="assets/cv.pdf" download aria-label="Download CV (PDF)" title="Download CV"><i class="bi bi-download" aria-hidden="true"></i></a>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close CV viewer"></button>
+        </div>
+        <div class="modal-body" id="pdfContainer">
+          <div class="pdf-status" id="pdfStatus" role="status">Loading CV…</div>
+          <div class="pdf-pages" id="pdfPages"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-close-cv" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QR code modal -->
+  <div class="modal fade" id="qrModal" tabindex="-1" aria-labelledby="qrModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content text-center">
+        <div class="modal-header border-0 pb-0">
+          <h2 class="modal-title fs-6 fw-bold" id="qrModalTitle">Scan to open this profile</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="qrCode" class="qr-box"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
