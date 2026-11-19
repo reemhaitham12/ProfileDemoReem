@@ -17,6 +17,7 @@ const profileLinks = {
   linkedin:  "https://www.linkedin.com/in/reem-haitham/",
   github:    "https://github.com/reemhaitham12",
   portfolio: "https://portfolio-reem-haitham.vercel.app/",
+  infographic: "https://drive.google.com/file/d/1jCHEy9ra66LzJLKAzP-TUoQlTkGrV_Ax/view?usp=sharing",
   whatsapp:  "+20 12 20978902",
   email:     "reemhaitham69@gmail.com"
 };
@@ -29,6 +30,7 @@ const linkDefinitions = [
   { key: "linkedin",  label: "LinkedIn",      icon: "bi-linkedin",     build: (v) => v },
   { key: "github",    label: "GitHub",        icon: "bi-github",       build: (v) => v },
   { key: "portfolio", label: "Portfolio",     icon: "bi-briefcase",    build: (v) => v },
+  { key: "infographic", label: "Info-graphic",  icon: "bi-file-earmark-image", build: (v) => v },
   { key: "whatsapp",  label: "WhatsApp",      icon: "bi-whatsapp",     build: (v) => "https://wa.me/" + String(v).replace(/\D/g, "") },
   { key: "email",     label: "Contact Email", icon: "bi-envelope",     build: (v) => "mailto:" + v, internal: true }
 ];
